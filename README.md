@@ -1,24 +1,34 @@
-# README
+# Event Test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This sample app showcases the `rails_event_store` gem to do event-based
+development in Ruby on Rails.
 
-Things you may want to cover:
+### Produce Events
 
-* Ruby version
+Based on [the documentation](https://railseventstore.org/docs/v2/publish/).
 
-* System dependencies
+```ruby
+stream = 'book-reviews.users'
+event = UserAddedEvent.new(data: {
+  id: "1e3d71ad-3065-49aa-bf7f-80dae484dc8d",
+  name: "Administrator",
+  email: "admin@bookreviews.com",
+  password: "abcd1234",
+  roles: %w(ROLE_ADMIN ROLE_USER),
+})
+Rails.configuration.event_store.publish(event, stream_name: stream)
+```
 
-* Configuration
+The `EventLogger` subscriber will echo the event to the logs.
 
-* Database creation
+### See All Events
 
-* Database initialization
+```ruby
+client = RailsEventStore::Client.new
+client.read.count
+client.read.each { |e| puts e.event_type }
+client.read.each { |e| puts e.data[:email] }
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Refer to [the documentation](https://railseventstore.org/docs/v2/read/) for
+more.
