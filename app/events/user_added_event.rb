@@ -1,0 +1,2 @@
+class UserAddedEvent < UserEvent
+end
