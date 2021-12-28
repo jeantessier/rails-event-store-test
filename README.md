@@ -10,7 +10,7 @@ Based on [the documentation](https://railseventstore.org/docs/v2/publish/).
 ```ruby
 stream_name = 'book-reviews.users'
 event = UserAddedEvent.new(data: {
-  id: "1e3d71ad-3065-49aa-bf7f-80dae484dc8d",
+  id: SecureRandom.uuid,
   name: "Administrator",
   email: "admin@bookreviews.com",
   password: "abcd1234",
