@@ -11,9 +11,9 @@ Based on [the documentation](https://railseventstore.org/docs/v2/publish/).
 stream_name = 'book-reviews.users'
 event = UserAddedEvent.new(data: {
   id: SecureRandom.uuid,
-  name: "Administrator",
-  email: "admin@bookreviews.com",
-  password: "abcd1234",
+  name: 'Administrator',
+  email: 'admin@bookreviews.com',
+  password: 'abcd1234',
   roles: %w(ROLE_ADMIN ROLE_USER),
 })
 Rails.configuration.event_store.publish(event, stream_name: stream_name)
