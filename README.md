@@ -75,3 +75,7 @@ client.read.stream(stream_name).each { |ev| puts ev.data[:email] }
 
 Refer to [the documentation](https://railseventstore.org/docs/v2/read/) for
 more.
+
+### See Events In the Browser
+
+Use the Rails Event Store Viewer at: http://localhost:3000/res
