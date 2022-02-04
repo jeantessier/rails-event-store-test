@@ -40,3 +40,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rails_event_store'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'ruby_event_store-rspec'
+end
