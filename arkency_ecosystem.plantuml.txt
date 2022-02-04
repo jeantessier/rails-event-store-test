@@ -1,0 +1,23 @@
+@startuml
+
+skinparam componentStyle uml1
+
+package Arkency {
+  [aggregate_root] ..> [ruby_event_store]
+
+  [bounded_context]
+
+  [rails_event_store] ..> [aggregate_root]
+  [rails_event_store] ..> [arkency-command_bus]
+  [rails_event_store] ..> [rails_event_store_active_record]
+  [rails_event_store] ..> [ruby_event_store]
+  [rails_event_store] ..> [ruby_event_store-browser]
+
+  [rails_event_store_active_record] ..> [ruby_event_store]
+
+  [ruby_event_store-browser] ..> [ruby_event_store]
+
+  [ruby_event_store-rspec]
+}
+
+@enduml
