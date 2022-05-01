@@ -81,3 +81,26 @@ more.
 ### See Events In the Browser
 
 Use the Rails Event Store Viewer at: http://localhost:3000/res
+
+### See Events In the Database
+
+```SQL
+SELECT
+    eve.event_id,
+    eve.event_type,
+    eve.created_at,
+    GROUP_CONCAT(
+        eveis.stream
+        ORDER BY eveis.stream DESC
+        SEPARATOR ', '
+    ) AS streams
+FROM
+    event_store_events AS eve
+    LEFT OUTER JOIN event_store_events_in_streams AS eveis
+        ON eve.event_id = eveis.event_id
+GROUP BY
+    eve.event_id
+ORDER BY
+    eve.id
+;
+```
