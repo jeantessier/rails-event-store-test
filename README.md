@@ -3,7 +3,7 @@
 This sample app showcases the `rails_event_store` gem to do event-based
 development in Ruby on Rails.
 
-![Arkency Gems](arkency_ecosystem.plantuml.png)
+![Arkency Gems](arkency_ecosystem.png)
 
 ### Produce Events
 
