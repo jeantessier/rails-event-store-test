@@ -78,7 +78,7 @@ GEM
       concurrent-ruby
     base64 (0.2.0)
     benchmark (0.4.0)
-    bigdecimal (3.1.8)
+    bigdecimal (3.1.9)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
     builder (3.3.0)
@@ -90,8 +90,7 @@ GEM
     diff-lcs (1.5.1)
     drb (2.2.1)
     erubi (1.13.1)
-    ffi (1.17.0-arm64-darwin)
-    ffi (1.17.0-x86_64-darwin)
+    ffi (1.17.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.6)
@@ -125,11 +124,10 @@ GEM
     net-protocol (0.2.2)
       timeout
     net-smtp (0.5.0)
-      net-protocol
     nio4r (2.7.4)
-    nokogiri (1.17.2-arm64-darwin)
+    nokogiri (1.18.0-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.17.2-x86_64-darwin)
+    nokogiri (1.18.0-x86_64-darwin)
       racc (~> 1.4)
     psych (5.2.2)
       date
@@ -258,4 +256,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   2.5.23
+   2.6.2
